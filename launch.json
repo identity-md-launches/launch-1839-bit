@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "BIT",
+    "name": "BIT",
+    "symbol": "BIT",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "100000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8800,
+    "initialMarketCapWei": "1000000000000000000000",
+    "remainderTo": "0x0007b73c85c6b6e8a05fb612df6550219acb6946"
+  },
+  "notes": "BIT is a fixed-supply ERC-20 (OpenZeppelin Contracts v5.0.2 ERC20, src/BIT.sol) named BIT with symbol BIT and 18 decimals. Its constructor takes no arguments and mints the whole supply of 100,000,000 BIT (100000000000000000000000000 minor units, the constant INITIAL_SUPPLY) once to msg.sender, which under ProjectFactory.launchCustom is the factory. There is no owner, minter, pauser, blacklist, fee, burn, tax, rebase, proxy, upgrade path, delegatecall or selfdestruct; transfers deliver exactly the requested amount to every address, so the factory's transfer of the swarm share to the MerkleDistributor, the single-sided seed through the Uniswap v4 PoolManager and ordinary trades move exactly what they say. Total supply cannot change after construction. The launch deploys no application contracts. The pool pairs BIT with IMD at 0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7 at the launch policy's 1.25% fee with tick spacing 60; initialPrice is provenance only, the deployer derives the opening price from economics.initialMarketCapWei (1,000 IMD for the whole supply) and the token's supply. Economics are the requester's: 8800 bps of the supply seeds the pool and the remainder of the requester's share goes to 0x0007b73c85c6b6e8a05fb612df6550219acb6946."
+}
